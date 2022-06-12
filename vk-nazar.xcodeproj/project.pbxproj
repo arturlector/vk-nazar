@@ -15,6 +15,7 @@
 		12DB56B4284FB087007A0D6F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12DB56B2284FB087007A0D6F /* LaunchScreen.storyboard */; };
 		12DB56C0284FC15B007A0D6F /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DB56BF284FC15B007A0D6F /* Session.swift */; };
 		12DB56C2284FC2F4007A0D6F /* FriendsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DB56C1284FC2F4007A0D6F /* FriendsVC.swift */; };
+		E044F219A8B8D4E2D97D5586 /* Pods_vk_nazar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59178E598F131D823C71A272 /* Pods_vk_nazar.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,9 @@
 		12DB56B5284FB087007A0D6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		12DB56BF284FC15B007A0D6F /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		12DB56C1284FC2F4007A0D6F /* FriendsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsVC.swift; sourceTree = "<group>"; };
+		59178E598F131D823C71A272 /* Pods_vk_nazar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_vk_nazar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		82BF432A775E15050C0B095F /* Pods-vk-nazar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vk-nazar.debug.xcconfig"; path = "Target Support Files/Pods-vk-nazar/Pods-vk-nazar.debug.xcconfig"; sourceTree = "<group>"; };
+		B8B10F76DB4489A823CD2275 /* Pods-vk-nazar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vk-nazar.release.xcconfig"; path = "Target Support Files/Pods-vk-nazar/Pods-vk-nazar.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E044F219A8B8D4E2D97D5586 /* Pods_vk_nazar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +51,8 @@
 			children = (
 				12DB56A6284FB085007A0D6F /* vk-nazar */,
 				12DB56A5284FB085007A0D6F /* Products */,
+				B45C823804C04B3DE6863549 /* Pods */,
+				4775EF1C554F1550460AC967 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +112,24 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		4775EF1C554F1550460AC967 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				59178E598F131D823C71A272 /* Pods_vk_nazar.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B45C823804C04B3DE6863549 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				82BF432A775E15050C0B095F /* Pods-vk-nazar.debug.xcconfig */,
+				B8B10F76DB4489A823CD2275 /* Pods-vk-nazar.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -112,9 +137,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 12DB56B8284FB087007A0D6F /* Build configuration list for PBXNativeTarget "vk-nazar" */;
 			buildPhases = (
+				570209D902D45CF992C8B60A /* [CP] Check Pods Manifest.lock */,
 				12DB56A0284FB085007A0D6F /* Sources */,
 				12DB56A1284FB085007A0D6F /* Frameworks */,
 				12DB56A2284FB085007A0D6F /* Resources */,
+				FBCC3E2D5CC5624EBCA2E953 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -170,6 +197,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		570209D902D45CF992C8B60A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-vk-nazar-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FBCC3E2D5CC5624EBCA2E953 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-vk-nazar/Pods-vk-nazar-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-vk-nazar/Pods-vk-nazar-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-vk-nazar/Pods-vk-nazar-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		12DB56A0284FB085007A0D6F /* Sources */ = {
@@ -324,6 +393,7 @@
 		};
 		12DB56B9284FB087007A0D6F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 82BF432A775E15050C0B095F /* Pods-vk-nazar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -352,6 +422,7 @@
 		};
 		12DB56BA284FB087007A0D6F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8B10F76DB4489A823CD2275 /* Pods-vk-nazar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
