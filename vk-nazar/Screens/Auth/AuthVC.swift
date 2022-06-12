@@ -10,7 +10,7 @@ import WebKit
 
 
 //OAuth
-class AuthVC: UIViewController {
+final class AuthVC: UIViewController {
     
     lazy var webView: WKWebView = {
         let webView = WKWebView()
@@ -76,12 +76,7 @@ class AuthVC: UIViewController {
     }
     
     func setupConstrains() {
-        NSLayoutConstraint.activate([
-            webView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
-            webView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0),
-            webView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0),
-            webView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
-        ])
+        webView.pinEdgesToSuperView()
     }
 }
 
@@ -133,8 +128,9 @@ extension AuthVC: WKNavigationDelegate {
         Session.shared.expiresIn = Int(expiresIn) ?? 0 //type convesion
         
         //Переход на контроллер следующий
-        let friendsVC = FriendsVC()
-        navigationController?.pushViewController(friendsVC, animated: true)
+        let mainTabVC = MainTabVC()
+        navigationController?.pushViewController(mainTabVC, animated: true)
+        mainTabVC.navigationController?.isNavigationBarHidden = true
 
         //Останавливаемся слушать запросы браузера
         decisionHandler(.cancel)
