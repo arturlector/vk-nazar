@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1255B2332855EF430003EAF6 /* GroupsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1255B2322855EF430003EAF6 /* GroupsVC.swift */; };
+		1255B2352855EF8F0003EAF6 /* MainTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1255B2342855EF8F0003EAF6 /* MainTabVC.swift */; };
+		1255B2382855F8EA0003EAF6 /* UIView+PinEdges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1255B2372855F8EA0003EAF6 /* UIView+PinEdges.swift */; };
+		1255B23A2855F97D0003EAF6 /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1255B2392855F97D0003EAF6 /* FriendCell.swift */; };
 		12DB56A8284FB085007A0D6F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DB56A7284FB085007A0D6F /* AppDelegate.swift */; };
 		12DB56AA284FB085007A0D6F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DB56A9284FB085007A0D6F /* SceneDelegate.swift */; };
 		12DB56AC284FB085007A0D6F /* AuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DB56AB284FB085007A0D6F /* AuthVC.swift */; };
-		12DB56AF284FB085007A0D6F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12DB56AD284FB085007A0D6F /* Main.storyboard */; };
 		12DB56B1284FB087007A0D6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12DB56B0284FB087007A0D6F /* Assets.xcassets */; };
 		12DB56B4284FB087007A0D6F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12DB56B2284FB087007A0D6F /* LaunchScreen.storyboard */; };
 		12DB56C0284FC15B007A0D6F /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DB56BF284FC15B007A0D6F /* Session.swift */; };
@@ -19,11 +22,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1255B2322855EF430003EAF6 /* GroupsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsVC.swift; sourceTree = "<group>"; };
+		1255B2342855EF8F0003EAF6 /* MainTabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabVC.swift; sourceTree = "<group>"; };
+		1255B2372855F8EA0003EAF6 /* UIView+PinEdges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+PinEdges.swift"; sourceTree = "<group>"; };
+		1255B2392855F97D0003EAF6 /* FriendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
 		12DB56A4284FB085007A0D6F /* vk-nazar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "vk-nazar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		12DB56A7284FB085007A0D6F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		12DB56A9284FB085007A0D6F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		12DB56AB284FB085007A0D6F /* AuthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVC.swift; sourceTree = "<group>"; };
-		12DB56AE284FB085007A0D6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		12DB56B0284FB087007A0D6F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		12DB56B3284FB087007A0D6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		12DB56B5284FB087007A0D6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -46,6 +52,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1255B22E2855EEE50003EAF6 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				12DB56AB284FB085007A0D6F /* AuthVC.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		1255B22F2855EEEC0003EAF6 /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				12DB56C1284FC2F4007A0D6F /* FriendsVC.swift */,
+				1255B2392855F97D0003EAF6 /* FriendCell.swift */,
+			);
+			path = Friends;
+			sourceTree = "<group>";
+		};
+		1255B2302855EEFA0003EAF6 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				1255B2342855EF8F0003EAF6 /* MainTabVC.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		1255B2312855EF070003EAF6 /* Groups */ = {
+			isa = PBXGroup;
+			children = (
+				1255B2322855EF430003EAF6 /* GroupsVC.swift */,
+			);
+			path = Groups;
+			sourceTree = "<group>";
+		};
+		1255B2362855F8CA0003EAF6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1255B2372855F8EA0003EAF6 /* UIView+PinEdges.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		12DB569B284FB085007A0D6F = {
 			isa = PBXGroup;
 			children = (
@@ -70,6 +117,7 @@
 				12DB56BB284FB09A007A0D6F /* Core */,
 				12DB56BC284FB0AC007A0D6F /* Screens */,
 				12DB56BE284FC146007A0D6F /* Services */,
+				1255B2362855F8CA0003EAF6 /* Extensions */,
 				12DB56BD284FB0C5007A0D6F /* Resources */,
 			);
 			path = "vk-nazar";
@@ -87,8 +135,10 @@
 		12DB56BC284FB0AC007A0D6F /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				12DB56AB284FB085007A0D6F /* AuthVC.swift */,
-				12DB56C1284FC2F4007A0D6F /* FriendsVC.swift */,
+				1255B22E2855EEE50003EAF6 /* Auth */,
+				1255B2302855EEFA0003EAF6 /* TabBar */,
+				1255B22F2855EEEC0003EAF6 /* Friends */,
+				1255B2312855EF070003EAF6 /* Groups */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -96,7 +146,6 @@
 		12DB56BD284FB0C5007A0D6F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				12DB56AD284FB085007A0D6F /* Main.storyboard */,
 				12DB56B0284FB087007A0D6F /* Assets.xcassets */,
 				12DB56B2284FB087007A0D6F /* LaunchScreen.storyboard */,
 				12DB56B5284FB087007A0D6F /* Info.plist */,
@@ -126,7 +175,6 @@
 				82BF432A775E15050C0B095F /* Pods-vk-nazar.debug.xcconfig */,
 				B8B10F76DB4489A823CD2275 /* Pods-vk-nazar.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -192,7 +240,6 @@
 			files = (
 				12DB56B4284FB087007A0D6F /* LaunchScreen.storyboard in Resources */,
 				12DB56B1284FB087007A0D6F /* Assets.xcassets in Resources */,
-				12DB56AF284FB085007A0D6F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,10 +292,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1255B2332855EF430003EAF6 /* GroupsVC.swift in Sources */,
 				12DB56C0284FC15B007A0D6F /* Session.swift in Sources */,
 				12DB56AC284FB085007A0D6F /* AuthVC.swift in Sources */,
+				1255B2382855F8EA0003EAF6 /* UIView+PinEdges.swift in Sources */,
+				1255B23A2855F97D0003EAF6 /* FriendCell.swift in Sources */,
 				12DB56A8284FB085007A0D6F /* AppDelegate.swift in Sources */,
 				12DB56AA284FB085007A0D6F /* SceneDelegate.swift in Sources */,
+				1255B2352855EF8F0003EAF6 /* MainTabVC.swift in Sources */,
 				12DB56C2284FC2F4007A0D6F /* FriendsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -256,14 +307,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		12DB56AD284FB085007A0D6F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				12DB56AE284FB085007A0D6F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		12DB56B2284FB087007A0D6F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -404,7 +447,6 @@
 				INFOPLIST_FILE = "vk-nazar/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -433,7 +475,6 @@
 				INFOPLIST_FILE = "vk-nazar/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
