@@ -8,7 +8,6 @@
 import UIKit
 import WebKit
 
-
 //OAuth
 final class AuthVC: UIViewController {
     
@@ -16,13 +15,11 @@ final class AuthVC: UIViewController {
         let webView = WKWebView()
         //Отключение перевода AutoresizingMask в Constraints
         webView.translatesAutoresizingMaskIntoConstraints = false
-        
         webView.navigationDelegate = self
-        
         return webView
     }()
     
-
+    //MARK: - Lifecycle
     //Загружена рутовая view и будут известны ее размеры
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,17 +30,15 @@ final class AuthVC: UIViewController {
         setupConstrains()
         
         if Session.isTokenValid {
-            //Переход на контроллер следующий
-            let mainTabVC = MainTabVC()
-            navigationController?.pushViewController(mainTabVC, animated: true)
-            navigationController?.isNavigationBarHidden = true
+            showMainTabBarController()
             return
         }
         
         authorizeToVK()
     }
     
-    func authorizeToVK() {
+    //MARK: - Private methods
+    private func authorizeToVK() {
         
         //https://oauth.vk.com/authorize?client_id=1&display=page&redirect_uri=http://example.com/callback&scope=friends&response_type=code&v=5.131
         
@@ -70,20 +65,27 @@ final class AuthVC: UIViewController {
         webView.load(request)
     }
     
-    func loadUrl() {
+    private func loadUrl() {
         guard let url = URL(string: "https://www.apple.com") else { return }
         if let data = try? Data(contentsOf: url) {
-            let request = URLRequest(url: url)
             webView.load(data, mimeType: "application/pdf", characterEncodingName: "", baseURL: url)
         }
     }
  
-    func setupViews() {
+    private func setupViews() {
         view.addSubview(webView)
     }
     
-    func setupConstrains() {
+    private func setupConstrains() {
         webView.pinEdgesToSuperView()
+    }
+    
+    //MARK: - Navigation
+    private func showMainTabBarController() {
+        //Переход на контроллер следующий
+        let mainTabVC = MainTabVC()
+        navigationController?.pushViewController(mainTabVC, animated: true)
+        navigationController?.isNavigationBarHidden = true
     }
 }
 
@@ -94,7 +96,7 @@ extension AuthVC: WKNavigationDelegate {
         //REDIRECT_URI
         //https://oauth.vk.com/blank.html#access_token=533bacf01e11f55b536a565b57531ad114461ae8736d6506a3&expires_in=86400&user_id=8492&state=123456
         //url.fragment - это часть URL после #
-        debugPrint(navigationResponse.response.url)
+        debugPrint(navigationResponse.response.url as Any)
         guard let url = navigationResponse.response.url, url.path == "/blank.html", let fragment = url.fragment  else {
 
             //Продолжить слушать запросы браузера
@@ -102,7 +104,7 @@ extension AuthVC: WKNavigationDelegate {
             return
         }
 
-        print(url.fragment)
+        print(url.fragment as Any)
         
         //[access_token
         //533bacf01e11f55b536a565b57531ad114461ae8736d6506a3
@@ -124,7 +126,6 @@ extension AuthVC: WKNavigationDelegate {
                 dictionary[key] = value
                 return dictionary
             }
-        #warning("Повторить reduce")
         
         debugPrint(params)
         
@@ -134,11 +135,8 @@ extension AuthVC: WKNavigationDelegate {
         Session.shared.userid = Int(userId) ?? 0 //nil coalescing operator -> оператор замены nil
         Session.shared.expiresIn = Int(expiresIn) ?? 0 //type convesion
         
-        //Переход на контроллер следующий
-        let mainTabVC = MainTabVC()
-        navigationController?.pushViewController(mainTabVC, animated: true)
-        navigationController?.isNavigationBarHidden = true
-
+        showMainTabBarController()
+        
         //Останавливаемся слушать запросы браузера
         decisionHandler(.cancel)
     }
