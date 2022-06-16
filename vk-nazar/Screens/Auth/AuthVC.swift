@@ -30,8 +30,15 @@ final class AuthVC: UIViewController {
         debugPrint(view.frame) //размеры view
         
         setupViews()
-        
         setupConstrains()
+        
+        if Session.isTokenValid {
+            //Переход на контроллер следующий
+            let mainTabVC = MainTabVC()
+            navigationController?.pushViewController(mainTabVC, animated: true)
+            navigationController?.isNavigationBarHidden = true
+            return
+        }
         
         authorizeToVK()
     }
@@ -130,7 +137,7 @@ extension AuthVC: WKNavigationDelegate {
         //Переход на контроллер следующий
         let mainTabVC = MainTabVC()
         navigationController?.pushViewController(mainTabVC, animated: true)
-        mainTabVC.navigationController?.isNavigationBarHidden = true
+        navigationController?.isNavigationBarHidden = true
 
         //Останавливаемся слушать запросы браузера
         decisionHandler(.cancel)

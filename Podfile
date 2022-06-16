@@ -8,5 +8,6 @@ target 'vk-nazar' do
   # Pods for vk-nazar
 
 pod 'SDWebImage', '5.12.5'
+pod 'SwiftKeychainWrapper', '4.0.1'
 
 end
